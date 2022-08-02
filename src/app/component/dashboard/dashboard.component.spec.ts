@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
 
 import { DashboardComponent } from './dashboard.component';
 
@@ -8,6 +9,7 @@ describe('DashboardComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
+      imports:[HttpClientTestingModule],
       declarations: [ DashboardComponent ]
     })
     .compileComponents();
@@ -17,7 +19,16 @@ describe('DashboardComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it('app-data', () => {
     expect(component).toBeTruthy();
   });
+    it('should render title', () => {
+    const fixture = TestBed.createComponent(DashboardComponent);
+    fixture.detectChanges();
+    const compiled = fixture.nativeElement as HTMLElement;
+    expect(compiled.querySelector('.page-area h6 span')?.textContent).toContain('TODO APP');
+  });
+
 });
+
+

@@ -5,17 +5,15 @@ import {HttpClient } from '@angular/common/http'
   providedIn: 'root'
 })
 export class TodoService {
-  serviceURL:string = "https://todo-3fc75-default-rtdb.firebaseio.com/products.json"
+  serviceURL:string = "https://todonew-5bc3d-default-rtdb.firebaseio.com/products.json";
 
   constructor(private http:HttpClient) { }
 
-  saveProduct(products: any[]){
+  saveProduct(products: any[]) {
     return this.http.put(this.serviceURL,products)
-    
-  }
-  
-  showData(){
+
+  };
+  showData() {
     return this.http.get(this.serviceURL)
-  }
-  
+  };
 }

@@ -1,43 +1,42 @@
-<p>dashboard works!</p>
 <div class="page-area">
-    <h1><span class=" text-center d-block p-2 bg-primary text-white">TODO APP</span></h1>
-    <br>
-    <div class = "container bpder-top pt-5">
-        <div class="row">
-            <div class="col-md-6">
-               <h1><span class=" text-center d-block p-2 bg-dark text-white">Enter Your Task</span></h1> 
-                <form>
-                    <div class="from-group">
-                        <input type="text" class="form-control" id="id" #id>
-                        <button type="button" class="btn btn-primary right" (click)="onAddProduct(id)">{{editMode? 'Update Task' : 'ADD TASK'}}</button>
-                    </div>
-                </form>
-            </div>
-            <div class="cold-md-10">
-                <h2></h2>
-                <table class="table">
-                    <thead class="thead-dark">
-                        <tr>
-                            <th scope="col">Task No.</th> 
-                            <th scope="col">Your Task</th>
-                            <th scope="col">Edit Task</th>
-                            <th scope="col">Delete Task</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr *ngFor="let product of products; index as i">
-                            <th scope="row">{{i+1}}</th>
-                            <td>{{product.taskName}}</td>
-                            <td (click)="onEdit(i)">
-                                <button type="button" class="btn btn-success">Edit</button>
-                            </td>
-                            <td>
-                                <button type="button" class="btn btn-danger" (click)="onDelete(i)">Delete</button>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
+  <h6><span class=" text-center d-block p-2 bg-primary text-white">TODO APP</span></h6>
+  <br>
+  <div class = "container bpder-top pt-5">
+    <div class="row">
+      <div class="col-md-6">
+        <h1><span class=" text-center d-block p-2 bg-dark text-white">Enter Your Task</span></h1> 
+        <form>
+          <div class="from-group">
+            <input type="text" class="form-control" id="id" #id>
+            <button type="button" class="btn btn-primary right" (click)="onAddProduct(id)">{{editMode? 'Update Task' : 'ADD TASK'}}</button>
+          </div>
+        </form>
+      </div>
+      <div class="cold-md-10">
+        <h2></h2>
+        <table class="table">
+          <thead class="thead-dark">
+            <tr>
+              <th scope="col">Task No.</th> 
+              <th scope="col">Your Task</th>
+              <th scope="col">Edit Task</th>
+              <th scope="col">Delete Task</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let product of products; index as i">
+              <th scope="row">{{i+1}}</th>
+              <td>{{product.taskName}}</td>
+              <td (click)="onEdit(i)">
+                <button type="button" class="btn btn-success">Edit</button>
+              </td>
+              <td>
+                <button type="button" class="btn btn-danger" (click)="onDelete(i)">Delete</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </div>
+  </div>
 </div>
